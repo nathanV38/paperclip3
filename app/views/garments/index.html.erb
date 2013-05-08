@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+  	<th>Picture</th>
     <th>Brand</th>
     <th>Price</th>
     <th>Size</th>
@@ -12,9 +13,19 @@
 
 <% @garments.each do |garment| %>
   <tr>
+  	<td><%= Garment.last.brand %></td>
+  
+  	<% if garment.garment_images.first %>
+  		
+  		<td><%= garment.garment_images.first.caption %></td>
+  		<td><%= link_to image_tag(garment.garment_images.first.photo.url(:small)), garment %></td>
+  	<%else%>
+  	<td> pas d'image </td>
+  	<% end %>
+  	
     <td><%= garment.brand %></td>
     <td><%= garment.price %></td>
-    <td><%= garment.size %></td>
+    <td><%= garment.size.name %></td>
     <td><%= link_to 'Show', garment %></td>
     <td><%= link_to 'Edit', edit_garment_path(garment) %></td>
     <td><%= link_to 'Destroy', garment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

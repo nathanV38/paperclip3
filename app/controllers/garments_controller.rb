@@ -25,6 +25,7 @@ class GarmentsController < ApplicationController
   # GET /garments/new.json
   def new
     @garment = Garment.new
+    3.times { @garment.garment_images.build} # added this
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class GarmentsController < ApplicationController
   # GET /garments/1/edit
   def edit
     @garment = Garment.find(params[:id])
+    3.times { @garment.garment_images.build }
   end
 
   # POST /garments

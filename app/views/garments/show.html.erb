@@ -15,6 +15,9 @@
   <%= @garment.size.name %>
 </p>
 
+<% @garment.garment_images.each do |image| %>
+	<%= link_to image_tag(image.photo.url(:small)), garments_path	 %>
+<%end%>
 
 <%= link_to 'Edit', edit_garment_path(@garment) %> |
 <%= link_to 'Back', garments_path %>
