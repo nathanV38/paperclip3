@@ -7,6 +7,8 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem "paperclip", "~> 3.0"
+#gem "paperclip", "3.0.4"
+#gem 'cocaine', '0.3.2'
 
 # Gems used only for assets and not required
 # in production environments by default.

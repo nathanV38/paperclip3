@@ -15,6 +15,7 @@
 
 <p>
   <b>Name:</b>
+  
   <%= @user.name %>
 </p>
 
@@ -28,6 +29,13 @@
   <%= @user.description %>
 </p>
 
+
+<% @user.garments.each do |garment|%>
+	<h3>ci dessous un nouveau garment</h3>
+	<% garment.garment_images.each do |image|%>
+	<%= image_tag  image.photo.url(:small)%>
+	<%end %>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
